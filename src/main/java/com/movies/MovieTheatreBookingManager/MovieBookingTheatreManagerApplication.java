@@ -1,13 +1,13 @@
-package com.movies.MovieBookingPage;
+package com.movies.MovieTheatreBookingManager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MovieBookingPageApplication {
+public class MovieBookingTheatreManagerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MovieBookingPageApplication.class, args);
+		SpringApplication.run(MovieBookingTheatreManagerApplication.class, args);
 	}
 
 }
