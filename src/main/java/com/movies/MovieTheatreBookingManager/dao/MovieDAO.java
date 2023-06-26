@@ -1,6 +1,6 @@
 package com.movies.MovieTheatreBookingManager.dao;
 
-import com.movies.MovieTheatreBookingManager.entities.MovieDetails;
+import com.movies.MovieTheatreBookingManager.dto.MovieDetails;
 
 public interface MovieDAO {
 

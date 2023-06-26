@@ -1,4 +1,4 @@
-package com.movies.MovieTheatreBookingManager.entities;
+package com.movies.MovieTheatreBookingManager.dto;
 
 import java.time.Duration;
 
