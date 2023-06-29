@@ -11,7 +11,7 @@ public class Theatre {
 
     @Id
     @GeneratedValue
-    private int theatreId;
+    private long theatreId;
     private String theatreName;
     private String theatreCity;
 }

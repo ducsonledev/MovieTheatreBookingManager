@@ -7,6 +7,6 @@ import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-    // sql query by method name
+    // sql query by method name, email as username
     Optional<User> findByEmail (String email);
 }
