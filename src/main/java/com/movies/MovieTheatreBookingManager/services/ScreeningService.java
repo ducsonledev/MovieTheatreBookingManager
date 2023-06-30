@@ -8,8 +8,7 @@ import com.movies.MovieTheatreBookingManager.repositories.*;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.Set;
+import java.util.*;
 
 @Service
 @AllArgsConstructor
@@ -54,7 +53,55 @@ public class ScreeningService {
     }
 
     public Set<Movie> getMoviesByDate(Date date) {
-        // todo: duplicate movies or not?
-        return null;
+        Iterable<Screening> screenings = this.screeningRepository
+                .findByScreeningDate(new java.sql.Date(date.getTime()));
+        Set<Movie> movies = new HashSet<>();
+
+        if(screenings==null) return null;
+        for (var screening : screenings)
+            if(screening.getScreeningDate() == date)
+                movies.add(movieRepository.findByMovieName(screening.getMovieName()));
+
+        return movies;
+    }
+
+    public List<Screening> getScreeningsByMovie(String movieName) {
+        return screeningRepository.findByMovieName(movieName);
+    }
+
+    public  List<MovieScreening> getMovieScreeningsByMovie(String movieName) {
+        List<MovieScreening> movieScreenings = new ArrayList<>();
+        var screenings = screeningRepository.findByMovieName(movieName);
+
+        if(screenings == null) return null;
+
+        for (var screening : screenings) {
+            var movieScreening = new MovieScreening();
+            var movie = movieRepository.findByMovieName(movieName);
+            var theatreId = screening.getTheatreId();
+            var theatre = theatreRepository.findByTheatreId(theatreId);
+
+            movieScreening.setMovieName(movieScreening.getMovieName());
+            movieScreening.setMoviePosterURL(movie.getMoviePosterUrl());
+
+            if (theatre != null) {
+                movieScreening.setTheatreId(theatreId);
+                movieScreening.setTheatreName(theatre.getTheatreName());
+                movieScreening.setTheatreCity(theatre.getTheatreCity());
+            }
+
+            movieScreening.setScreeningDate(screening.getScreeningDate().toString());
+            movieScreening.setScreeningTime(screening.getScreeningTime().toString());
+
+            movieScreening.setNumSeats(
+                    screenRepository.findByScreenId(
+                            screening.getScreenId()).getSeatsNum()
+            );
+
+            movieScreenings.add(movieScreening);
+        }
+
+
+        return movieScreenings;
     }
 }

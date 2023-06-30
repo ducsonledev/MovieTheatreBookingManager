@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface ScreenRepository extends JpaRepository<Screen, Long> {
     public Screen findByScreenId(long screenId);
-    public List<Screen> findByTheatreId(long screenId);
+    public List<Screen> findByTheatreId(long theatreId);
 }
