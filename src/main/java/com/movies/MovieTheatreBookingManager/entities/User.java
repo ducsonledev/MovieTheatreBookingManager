@@ -18,7 +18,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "_user") // to avoid ambiguity
+@Table(name = "USER")
 public class User implements UserDetails {
 
     @Id
