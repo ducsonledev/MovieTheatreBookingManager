@@ -5,18 +5,25 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table
+@Table(name = "SCREENING")
 @Data
 public class Screening implements Cloneable {
 
     @Id
     @GeneratedValue
+    @Column(name = "SCREENING_ID")
     private long screeningId;
+    @Column(name = "THEATRE_ID")
     private long theatreId;
+    @Column(name = "SCREEN_ID")
     private long screenId;
+    @Column(name = "MOVIE_NAME")
     private String movieName;
+    @Column(name = "SCREENING_DATE")
     private java.sql.Date screeningDate;
+    @Column(name = "SCREENING_TIME")
     private java.sql.Time screeningTime;
+    @Column(name = "BOOKED_TICKETS")
     private int bookedTickets;
 
     public Object clone() throws CloneNotSupportedException{

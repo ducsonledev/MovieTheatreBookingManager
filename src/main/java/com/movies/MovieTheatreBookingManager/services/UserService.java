@@ -38,9 +38,9 @@ public class UserService {
         }
         userDao.insertUser(
                 new User(
-                        UserRegistrationRequest.firstname(),
-                        UserRegistrationRequest.lastname(),
-                        UserRegistrationRequest.email()
+                        UserRegistrationRequest.username(),
+                        UserRegistrationRequest.email(),
+                        UserRegistrationRequest.password()
                 )
         );
     }
@@ -60,8 +60,8 @@ public class UserService {
         var user = getUser(id);
 
         boolean changes = false;
-        if (updateRequest.name() != null && !updateRequest.name().equals(user.getName())) {
-            user.setName(updateRequest.name());
+        if (updateRequest.username() != null && !updateRequest.username().equals(user.getUsername())) {
+            user.setUsername(updateRequest.username());
             changes = true;
         }
 

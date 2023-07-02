@@ -1,22 +1,21 @@
 package com.movies.MovieTheatreBookingManager.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Table(name = "SEAT")
 public class Seat {
 
     @Id
     @GeneratedValue
+    @Column(name = "SEAT_ID")
     private int id;
+    @Column(name = "ROW_ID")
     private char rowId;
+    @Column(name = "ROW_NUMBER")
     private int rowNumber;
+    @Column(name = "SCREEN_ID")
     private int screenId;
 }

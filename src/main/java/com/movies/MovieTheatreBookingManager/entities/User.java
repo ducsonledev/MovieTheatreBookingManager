@@ -23,10 +23,13 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue
+    @Column(name = "USER_ID")
     private int id;
-    private String firstname;
-    private String lastname;
+    @Column(name = "USERNAME", nullable = false, unique = true)
+    private String username;
+    @Column(name = "EMAIL")
     private String email;
+    @Column(name = "PASSWORD")
     private String password;
 
     @Enumerated(EnumType.STRING)
@@ -37,9 +40,14 @@ public class User implements UserDetails {
         return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
     @Override
     public String getUsername() {
-        return email;
+        return username;
     }
 
     @Override

@@ -1,20 +1,21 @@
 package com.movies.MovieTheatreBookingManager.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table
+@Table(name = "MOVIE")
 @Data
 public class Movie {
 
     @Id
     @GeneratedValue
-    private Integer movieId;
+    @Column(name = "MOVIE_ID")
+    private int movieId;
+    @Column(name = "MOVIE_NAME")
     private String movieName;
+    @Column(name = "MOVIE_TAGS")
     private String movieTags;
+    @Column(name = "MOVIE_POSTER_URL")
     private String moviePosterUrl;
 }
