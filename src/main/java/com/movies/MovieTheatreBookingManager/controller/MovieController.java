@@ -6,13 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/demo-controller")
+@RequestMapping("/api/v1/movies")
 public class MovieController {
 
     @GetMapping
-    public ResponseEntity<String> sayHello() {
-        return ResponseEntity.ok("Hello from secured endpoint.");
+    public ResponseEntity<String> getMovies() {
+        return ResponseEntity.ok("movies");
     }
-
 
 }
