@@ -2,6 +2,9 @@ package com.movies.MovieTheatreBookingManager.entities;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,10 +28,13 @@ public class User implements UserDetails {
     @GeneratedValue
     @Column(name = "USER_ID")
     private int id;
+    @NotBlank(message = "Username is mandatory.")
     @Column(name = "USERNAME", nullable = false, unique = true)
     private String username;
+    @Email
     @Column(name = "EMAIL")
     private String email;
+    @Min(value = 8, message = "Password should have at least 8 characters.")
     @Column(name = "PASSWORD")
     private String password;
 
