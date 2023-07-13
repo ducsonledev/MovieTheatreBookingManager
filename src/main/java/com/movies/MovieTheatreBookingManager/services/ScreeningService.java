@@ -41,7 +41,7 @@ public class ScreeningService {
       return getBookedSeats(movieScreening);
     }
 
-    private int getBookedSeats(MovieScreening movieScreening) {
+    public int getBookedSeats(MovieScreening movieScreening) {
         Screening screening = getScreening(movieScreening);
         return screening.getBookedTickets();
     }
