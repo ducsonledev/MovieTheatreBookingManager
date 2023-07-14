@@ -5,22 +5,25 @@ import com.movies.MovieTheatreBookingManager.repositories.MovieRepository;
 import com.movies.MovieTheatreBookingManager.services.ScreeningService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.logging.Logger;
 
-@RestController
+@Controller
 @RequestMapping("/api/v1/screenings")
-@RequiredArgsConstructor
+// @RequiredArgsConstructor
 public class ScreeningController {
-    private final Logger LOGGER = (Logger) LoggerFactory.getLogger(this.getClass());
+    private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
-    private final MovieRepository movieRepository;
-    private final ScreeningService screeningService;
+    @Autowired
+    private MovieRepository movieRepository;
+    @Autowired
+    private ScreeningService screeningService;
 
     @GetMapping("/{movie}")
     public String getScreenings(@RequestParam String movie, Model model) {

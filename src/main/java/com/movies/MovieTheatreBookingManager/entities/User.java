@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,10 +22,11 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "USER")
+@Table(name = "USERS") // user reserved keyword in postgresql
 public class User implements UserDetails {
 
     @Id
+    // @SequenceGenerator(name = "",allocationSize = 1)
     @GeneratedValue
     @Column(name = "USER_ID")
     private int id;
@@ -34,7 +36,7 @@ public class User implements UserDetails {
     @Email
     @Column(name = "EMAIL")
     private String email;
-    @Min(value = 8, message = "Password should have at least 8 characters.")
+    @Size(min = 8, message = "Password should have at least 8 characters.")
     @Column(name = "PASSWORD")
     private String password;
 
