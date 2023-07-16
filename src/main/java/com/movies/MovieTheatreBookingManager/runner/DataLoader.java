@@ -98,7 +98,7 @@ public class DataLoader implements ApplicationRunner {
             }
 
             if (movieLensPage != null) {
-                Element image = movieLensPage.getElementsByClass("poster").first().children().first().children().first();
+                Element image = movieLensPage.getElementsByClass("ipc-poster").first().children().first().children().first();
                 movie.setMoviePosterUrl(image.attr("src"));
             }
 
