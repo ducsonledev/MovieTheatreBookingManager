@@ -9,7 +9,15 @@ import lombok.Data;
 public class Movie {
 
     @Id
-    @GeneratedValue
+    @SequenceGenerator(
+            name = "movie_id_seq",
+            sequenceName = "movie_id_seq",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "movie_id_seq"
+    )
     @Column(name = "MOVIE_ID")
     private int movieId;
     @Column(name = "MOVIE_NAME")
