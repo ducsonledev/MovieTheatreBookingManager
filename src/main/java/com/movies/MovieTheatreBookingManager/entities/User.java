@@ -27,11 +27,19 @@ public class User implements UserDetails {
 
     @Id
     // @SequenceGenerator(name = "",allocationSize = 1)
-    @GeneratedValue
+    @SequenceGenerator(
+            name = "users_id_seq",
+            sequenceName = "users_id_seq",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "users_id_seq"
+    )
     @Column(name = "USER_ID")
     private int id;
     @NotBlank(message = "Username is mandatory.")
-    @Column(name = "USERNAME", nullable = false, unique = true)
+    @Column(name = "USERNAME") //, nullable = false, unique = true)
     private String username;
     @Email
     @Column(name = "EMAIL")
