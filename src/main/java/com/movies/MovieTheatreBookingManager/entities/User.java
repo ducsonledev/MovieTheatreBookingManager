@@ -26,7 +26,6 @@ import java.util.List;
 public class User implements UserDetails {
 
     @Id
-    // @SequenceGenerator(name = "",allocationSize = 1)
     @SequenceGenerator(
             name = "users_id_seq",
             sequenceName = "users_id_seq",
