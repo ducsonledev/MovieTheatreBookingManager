@@ -10,7 +10,15 @@ import lombok.Data;
 public class Screening implements Cloneable {
 
     @Id
-    @GeneratedValue
+    @SequenceGenerator(
+            name = "screening_id_seq",
+            sequenceName = "screening_id_seq",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "screening_id_seq"
+    )
     @Column(name = "SCREENING_ID")
     private long screeningId;
     @Column(name = "THEATRE_ID")
