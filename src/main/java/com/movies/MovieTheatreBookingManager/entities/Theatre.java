@@ -9,7 +9,15 @@ import lombok.Data;
 public class Theatre {
 
     @Id
-    @GeneratedValue
+    @SequenceGenerator(
+            name = "theatre_id_seq",
+            sequenceName = "theatre_id_seq",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "theatre_id_seq"
+    )
     @Column(name = "THEATRE_ID")
     private long theatreId;
     @Column(name = "THEATRE_NAME")

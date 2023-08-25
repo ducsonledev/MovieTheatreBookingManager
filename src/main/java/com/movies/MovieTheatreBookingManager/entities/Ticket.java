@@ -9,7 +9,15 @@ import lombok.Data;
 public class Ticket {
 
     @Id
-    @GeneratedValue
+    @SequenceGenerator(
+            name = "ticket_id_seq",
+            sequenceName = "ticket_id_seq",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "ticket_id_seq"
+    )
     @Column(name = "TICKET_ID")
     private int ticketId;
     @Column(name = "SCREENING_ID")
