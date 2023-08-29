@@ -19,7 +19,7 @@ public class Movie {
             generator = "movie_id_seq"
     )
     @Column(name = "MOVIE_ID")
-    private int movieId;
+    private long movieId;
     @Column(name = "MOVIE_NAME")
     private String movieName;
     @Column(name = "MOVIE_TAGS")

@@ -36,7 +36,7 @@ public class User implements UserDetails {
             generator = "users_id_seq"
     )
     @Column(name = "USER_ID")
-    private int id;
+    private long id;
     @NotBlank(message = "Username is mandatory.")
     @Column(name = "USERNAME") //, nullable = false, unique = true)
     private String username;

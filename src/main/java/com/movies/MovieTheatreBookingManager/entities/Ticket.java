@@ -19,7 +19,7 @@ public class Ticket {
             generator = "ticket_id_seq"
     )
     @Column(name = "TICKET_ID")
-    private int ticketId;
+    private long ticketId;
     @Column(name = "SCREENING_ID")
     private long screeningId;
     @Column(name = "SEAT_NUM")
