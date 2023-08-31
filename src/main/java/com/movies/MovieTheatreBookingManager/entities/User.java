@@ -46,7 +46,7 @@ public class User implements UserDetails {
     @Size(min = 8, message = "Password should have at least 8 characters.")
     @Column(name = "PASSWORD")
     private String password;
-
+    @Column(name = "ROLE")
     @Enumerated(EnumType.STRING)
     private Role role;
 
