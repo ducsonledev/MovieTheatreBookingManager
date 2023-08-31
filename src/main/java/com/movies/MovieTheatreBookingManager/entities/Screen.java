@@ -9,13 +9,13 @@ import lombok.Data;
 public class Screen {
     @Id
     @SequenceGenerator(
-            name = "screen_id_seq",
-            sequenceName = "screen_id_seq",
+            name = "screen_screen_id_seq",
+            sequenceName = "screen_screen_id_seq",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "screen_id_seq"
+            generator = "screen_screen_id_seq"
     )
     @Column(name = "SCREEN_ID")
     private long screenId;

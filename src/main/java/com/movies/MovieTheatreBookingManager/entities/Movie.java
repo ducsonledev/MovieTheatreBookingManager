@@ -10,13 +10,13 @@ public class Movie {
 
     @Id
     @SequenceGenerator(
-            name = "movie_id_seq",
-            sequenceName = "movie_id_seq",
+            name = "movie_movie_id_seq",
+            sequenceName = "movie_movie_id_seq",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "movie_id_seq"
+            generator = "movie_movie_id_seq"
     )
     @Column(name = "MOVIE_ID")
     private long movieId;

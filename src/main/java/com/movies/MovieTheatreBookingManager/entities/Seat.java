@@ -10,13 +10,13 @@ public class Seat {
 
     @Id
     @SequenceGenerator(
-            name = "seat_id_seq",
-            sequenceName = "seat_id_seq",
+            name = "seat_seat_id_seq",
+            sequenceName = "seat_seat_id_seq",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "seat_id_seq"
+            generator = "seat_seat_id_seq"
     )
     @Column(name = "SEAT_ID")
     private long id;

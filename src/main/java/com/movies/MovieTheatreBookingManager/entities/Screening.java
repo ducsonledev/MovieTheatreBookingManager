@@ -11,13 +11,13 @@ public class Screening implements Cloneable {
 
     @Id
     @SequenceGenerator(
-            name = "screening_id_seq",
-            sequenceName = "screening_id_seq",
+            name = "screening_screening_id_seq",
+            sequenceName = "screening_screening_id_seq",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "screening_id_seq"
+            generator = "screening_screening_id_seq"
     )
     @Column(name = "SCREENING_ID")
     private long screeningId;

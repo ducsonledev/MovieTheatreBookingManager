@@ -10,13 +10,13 @@ public class Ticket {
 
     @Id
     @SequenceGenerator(
-            name = "ticket_id_seq",
-            sequenceName = "ticket_id_seq",
+            name = "ticket_ticket_id_seq",
+            sequenceName = "ticket_ticket_id_seq",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "ticket_id_seq"
+            generator = "ticket_ticket_id_seq"
     )
     @Column(name = "TICKET_ID")
     private long ticketId;

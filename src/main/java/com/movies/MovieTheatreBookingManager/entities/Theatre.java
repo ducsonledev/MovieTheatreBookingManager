@@ -10,13 +10,13 @@ public class Theatre {
 
     @Id
     @SequenceGenerator(
-            name = "theatre_id_seq",
-            sequenceName = "theatre_id_seq",
+            name = "theatre_theatre_id_seq",
+            sequenceName = "theatre_theatre_id_seq",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "theatre_id_seq"
+            generator = "theatre_theatre_id_seq"
     )
     @Column(name = "THEATRE_ID")
     private long theatreId;

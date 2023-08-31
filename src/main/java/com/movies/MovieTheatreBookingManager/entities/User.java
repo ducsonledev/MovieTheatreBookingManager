@@ -27,13 +27,13 @@ public class User implements UserDetails {
 
     @Id
     @SequenceGenerator(
-            name = "users_id_seq",
-            sequenceName = "users_id_seq",
+            name = "users_user_id_seq",
+            sequenceName = "users_user_id_seq",
             allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "users_id_seq"
+            generator = "users_user_id_seq"
     )
     @Column(name = "USER_ID")
     private long id;
