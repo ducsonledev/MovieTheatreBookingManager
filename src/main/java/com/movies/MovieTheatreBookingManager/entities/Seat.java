@@ -9,13 +9,21 @@ import lombok.Data;
 public class Seat {
 
     @Id
-    @GeneratedValue
+    @SequenceGenerator(
+            name = "seat_id_seq",
+            sequenceName = "seat_id_seq",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "seat_id_seq"
+    )
     @Column(name = "SEAT_ID")
-    private int id;
+    private long id;
     @Column(name = "ROW_ID")
     private char rowId;
     @Column(name = "ROW_NUMBER")
     private int rowNumber;
     @Column(name = "SCREEN_ID")
-    private int screenId;
+    private long screenId;
 }
