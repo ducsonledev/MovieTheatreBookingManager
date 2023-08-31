@@ -22,7 +22,15 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "USERS") // user reserved keyword in postgresql
+@Table(
+        name = "USERS",
+        uniqueConstraints = {
+                @UniqueConstraint(
+                        name = "users_username_key",
+                        columnNames = "EMAIL"
+                )
+        }
+) // user reserved keyword in postgresql
 public class User implements UserDetails {
 
     @Id
@@ -38,7 +46,7 @@ public class User implements UserDetails {
     @Column(name = "USER_ID")
     private long id;
     @NotBlank(message = "Username is mandatory.")
-    @Column(name = "USERNAME") //, nullable = false, unique = true)
+    @Column(name = "USERNAME", nullable = false)
     private String username;
     @Email
     @Column(name = "EMAIL")
