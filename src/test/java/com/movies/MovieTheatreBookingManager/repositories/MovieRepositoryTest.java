@@ -1,6 +1,7 @@
 package com.movies.MovieTheatreBookingManager.repositories;
 
 import com.movies.MovieTheatreBookingManager.AbstractTestcontainers;
+import com.movies.MovieTheatreBookingManager.entities.Movie;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,7 @@ class MovieRepositoryTest extends AbstractTestcontainers {
     @Test
     void findByMovieName() {
         // Given
+        Movie movie = new Movie();
 
         // When
 
