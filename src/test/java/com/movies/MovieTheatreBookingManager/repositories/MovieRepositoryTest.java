@@ -32,8 +32,9 @@ class MovieRepositoryTest extends AbstractTestcontainers {
         // https://www.imdb.com/title/tt0114709/ // Toy Story // Animation
         Movie movie = new Movie();
         String movieName = "Toy Story";
+        String movieTags = "Animation";
         movie.setMovieName(movieName);
-        movie.setMovieTags("Animation");
+        movie.setMovieTags(movieTags);
         Document movieLensPage = null;
         try {
             movieLensPage = Jsoup.connect("https://www.imdb.com/title/tt" + "0114709").get();
@@ -57,9 +58,29 @@ class MovieRepositoryTest extends AbstractTestcontainers {
     @Test
     void findByMovieId() {
         // Given
+        // https://www.imdb.com/title/tt0114709/ // Toy Story // Animation
+        Movie movie = new Movie();
+        String movieName = "Toy Story";
+        String movieTags = "Animation";
+        movie.setMovieName(movieName);
+        movie.setMovieTags(movieTags);
+        Document movieLensPage = null;
+        try {
+            movieLensPage = Jsoup.connect("https://www.imdb.com/title/tt" + "0114709").get();
+        } catch (HttpStatusException e) {
+            return;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        if (movieLensPage != null) {
+            Element image = movieLensPage.getElementsByClass("ipc-poster").first().children().first().children().first();
+            movie.setMoviePosterUrl(image.attr("src"));
+        }
+        underTest.save(movie);
         // When
-
+        var actual = underTest.findByMovieId(1);
         // Then
+        assertThat(actual.getMovieId()).isEqualTo(1);
     }
 }
