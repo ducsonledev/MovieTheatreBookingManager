@@ -2,9 +2,8 @@ package com.movies.MovieTheatreBookingManager.controller;
 
 import com.movies.MovieTheatreBookingManager.domain.MovieScreening;
 import com.movies.MovieTheatreBookingManager.repositories.MovieRepository;
-import com.movies.MovieTheatreBookingManager.services.ScreeningService;
+import com.movies.MovieTheatreBookingManager.services.ScreeningServiceImpl;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,7 @@ public class ScreeningController {
     @Autowired
     private MovieRepository movieRepository;
     @Autowired
-    private ScreeningService screeningService;
+    private ScreeningServiceImpl screeningService;
 
     @GetMapping("/{movie}")
     public String getScreenings(@RequestParam String movie, Model model) {
