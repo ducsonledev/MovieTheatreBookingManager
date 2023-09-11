@@ -10,6 +10,7 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.verify;
 
 class UserServiceTest {
 
@@ -32,17 +33,19 @@ class UserServiceTest {
         // When
         underTest.getAllUsers();
         // Then
-        Mockito.verify(userDao)
+        verify(userDao)
                 .selectAllUser();
     }
 
     @Test
     void getUser() {
         // Given
+        int id = 1;
 
         // When
-
+        underTest.getUser(id);
         // Then
+        verify(userDao).selectUserById(id);
     }
 
     @Test
