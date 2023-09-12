@@ -29,10 +29,11 @@ class MovieRepositoryTest extends AbstractTestcontainers {
     @Test
     void findByMovieName() {
         // Given
-        // https://www.imdb.com/title/tt0114709/ // Toy Story // Animation
+        // https://www.imdb.com/title/tt0114709/ // Toy Story // Animation...
+        // (1, Toy Story, Adventure|Animation|Children|Comedy|Fantasy, <MoviePosterUrl>)
         Movie movie = new Movie();
         String movieName = "Toy Story";
-        String movieTags = "Animation";
+        String movieTags = "Adventure|Animation|Children|Comedy|Fantasy";
         movie.setMovieName(movieName);
         movie.setMovieTags(movieTags);
         Document movieLensPage = null;
@@ -61,7 +62,7 @@ class MovieRepositoryTest extends AbstractTestcontainers {
         // https://www.imdb.com/title/tt0114709/ // Toy Story // Animation
         Movie movie = new Movie();
         String movieName = "Toy Story";
-        String movieTags = "Animation";
+        String movieTags = "Adventure|Animation|Children|Comedy|Fantasy";
         movie.setMovieName(movieName);
         movie.setMovieTags(movieTags);
         Document movieLensPage = null;

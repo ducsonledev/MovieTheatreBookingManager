@@ -1,5 +1,6 @@
 package com.movies.MovieTheatreBookingManager.services;
 
+import com.movies.MovieTheatreBookingManager.AbstractTestcontainers;
 import com.movies.MovieTheatreBookingManager.dao.UserDao;
 import com.movies.MovieTheatreBookingManager.repositories.UserRepository;
 import org.junit.jupiter.api.AfterEach;
@@ -8,9 +9,11 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.verify;
+
 
 class UserServiceTest {
 
@@ -40,7 +43,7 @@ class UserServiceTest {
     @Test
     void getUser() {
         // Given
-        int id = 1;
+        int id = 9;
 
         // When
         underTest.getUser(id);
