@@ -6,6 +6,7 @@ MovieTheatreBookingManager works as a reservation management tool to manage a th
 
 ## Work in Progress
 
+    integration tests
     frontend with typescript
     deployment with terraform and AWS ECS
 
