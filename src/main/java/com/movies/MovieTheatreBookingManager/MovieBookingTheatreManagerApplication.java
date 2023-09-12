@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import com.movies.MovieTheatreBookingManager.dao.UserDao;
 import com.movies.MovieTheatreBookingManager.entities.Role;
 import com.movies.MovieTheatreBookingManager.entities.User;
+import com.movies.MovieTheatreBookingManager.repositories.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,21 +19,20 @@ public class MovieBookingTheatreManagerApplication {
 		SpringApplication.run(MovieBookingTheatreManagerApplication.class, args);
 	}
 	@Bean
-	CommandLineRunner runner(UserDao userDao) {
+	CommandLineRunner runner(UserRepository userRepository) {
 		return args -> {
 			var faker = new Faker();
 			var random = new Random();
 			var name = faker.name();
 			var password = "abcdefgh";
-			String firstName = name.firstName();
-			String lastName = name.lastName();
+			Role role = Role.CUSTOMER;
+			String username = name.username();
 			var user = new User(
-					firstName + " " + lastName,
-					firstName.toLowerCase() + "." + lastName.toLowerCase()
-							+ "@mailservice.com",
+					username,
+					username.toLowerCase() + "@mailservice.com",
 					password
 			);
-			userDao.insertUser(user);
+			userRepository.save(user);
 		};
 	}
 }
