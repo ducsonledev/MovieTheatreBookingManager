@@ -18,3 +18,7 @@ bash tree TODO
 Data
 
 MovieLens dataset (small): http://files.grouplens.org/datasets/movielens/
+
+Prerequisites
+
+Internet connection to extract poster images from imdb.com
