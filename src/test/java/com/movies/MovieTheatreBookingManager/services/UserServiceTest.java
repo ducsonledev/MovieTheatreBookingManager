@@ -4,6 +4,7 @@ import com.movies.MovieTheatreBookingManager.AbstractTestcontainers;
 import com.movies.MovieTheatreBookingManager.dao.UserDao;
 import com.movies.MovieTheatreBookingManager.entities.Role;
 import com.movies.MovieTheatreBookingManager.entities.User;
+import com.movies.MovieTheatreBookingManager.exception.ResourceNotFoundException;
 import com.movies.MovieTheatreBookingManager.repositories.UserRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,6 +16,7 @@ import org.mockito.MockitoAnnotations;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -46,18 +48,34 @@ class UserServiceTest {
     }
 
     @Test
-    void getUser() {
+    void canGetUser() {
         // Given
         int id = 9;
         var user = new User(
                 id, "Johnny", "john@mailservice.com", "abcdefgh", Role.CUSTOMER
         );
-        // if this works returns optional
+        // telling mock what to do when it invokes selectUserById
+        // returns optional
         when(userDao.selectUserById(id)).thenReturn(Optional.of(user));
         // When
         var actual = underTest.getUser(id);
         // Then
         assertThat(actual).isEqualTo(user);
+    }
+    @Test
+    void willThrowThenGetUserReturnsEmptyOptional() {
+        // Given
+        int id = 9;
+        // telling mock what to do when it invokes selectUserById
+        // returns optional
+        when(userDao.selectUserById(id)).thenReturn(Optional.empty());
+        // When
+        // Then
+        assertThatThrownBy(() -> underTest.getUser(id))
+                .isInstanceOf(ResourceNotFoundException.class)
+                .hasMessage(
+                        "User with id [%s] not found".formatted(id));
+
     }
 
     @Test
