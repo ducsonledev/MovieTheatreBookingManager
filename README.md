@@ -5,10 +5,9 @@
 MovieTheatreBookingManager works as a reservation management tool to manage a theatre fully. For 1. to buy tickets that reservates seats in a screening and for 2. to manage the movies shown in screenings that are presented for the customers.
 
 ## Work in Progress
-
-    integration tests
-    frontend with typescript
-    deployment with terraform and AWS ECS
+- [ ] integration tests
+- [ ] frontend with typescript
+- [ ] deployment with terraform and AWS ECS
 
 ## Repository Structure
 
