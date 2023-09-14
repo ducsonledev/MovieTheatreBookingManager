@@ -2,7 +2,7 @@
 
 ### MovieTheatreBookingManager
 
-MovieTheatreBookingManager works as a reservation management tool to manage a theatre fully. For 1. to buy tickets that reserves seats in a screening and for 2. to manage the movies shown in screenings that are presented for the customers.
+MovieTheatreBookingManager works as a reservation management tool to manage a theatre fully. For 1. to buy tickets that reserves seats of a screening and for 2. to manage the movies shown in screenings that are presented for the customers.
 
 ### Work in Progress
 - [ ] integration tests
