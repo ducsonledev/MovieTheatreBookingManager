@@ -1,15 +1,15 @@
-### About The Project
+## About The Project
 
-## MovieTheatreBookingManager
+### MovieTheatreBookingManager
 
 MovieTheatreBookingManager works as a reservation management tool to manage a theatre fully. For 1. to buy tickets that reservates seats in a screening and for 2. to manage the movies shown in screenings that are presented for the customers.
 
-## Work in Progress
+### Work in Progress
 - [ ] integration tests
 - [ ] frontend with typescript
 - [ ] deployment with terraform and AWS ECS
 
-## Repository Structure
+### Repository Structure
 
 We present the repository structure as well as the functionality of the different major components in the following.
 File Overview
@@ -211,17 +211,17 @@ File Overview
                     └── services
                         └── UserServiceTest.class
 ```
-### Data
+## Data
 
-## Datasets
+### Datasets
 
 MovieLens dataset (small): http://files.grouplens.org/datasets/movielens/
 
-### Getting Started
+## Getting Started
 
 These instructions will allow you to get the project up and running on your local machine for development and testing purposes.
 
-## Prerequisites
+### Prerequisites
 
 1. Internet connection, to extract poster images from www.imdb.com
 2. Copy dependencies from `pom.xml`
