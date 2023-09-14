@@ -14,9 +14,8 @@ MovieTheatreBookingManager works as a reservation management tool to manage a th
 
 We present the repository structure as well as the functionality of the different major components in the following.
 File Overview
-
+```
 ├── HELP.md
-
 ├── README.md
 ├── docker-compose.yml
 ├── mvnw
@@ -212,7 +211,7 @@ File Overview
                     │   └── TheatreRepositoryTest.class
                     └── services
                         └── UserServiceTest.class
-
+```
 ## Data
 
 MovieLens dataset (small): http://files.grouplens.org/datasets/movielens/
