@@ -211,10 +211,17 @@ File Overview
                     └── services
                         └── UserServiceTest.class
 ```
-## Data
+### Data
+
+## Datasets
 
 MovieLens dataset (small): http://files.grouplens.org/datasets/movielens/
 
+### Getting Started
+
+These instructions will allow you to get the project up and running on your local machine for development and testing purposes.
+
 ## Prerequisites
 
-Internet connection, to extract poster images from www.imdb.com
+1. Internet connection, to extract poster images from www.imdb.com
+2. Copy dependencies from `pom.xml`
