@@ -12,7 +12,9 @@ MovieTheatreBookingManager serves as a tool for properly managing reservations f
 ### Repository Structure
 
 We present the repository structure as well as the functionality of the different major components in the following.
-File Overview
+
+### File Overview
+
 ```
 ├── HELP.md
 ├── README.md
