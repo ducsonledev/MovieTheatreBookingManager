@@ -10,6 +10,8 @@ import {
   Icon,
   chakra,
   Tooltip,
+  Wrap,
+  WrapItem
 } from '@chakra-ui/react'
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs'
 import { FiShoppingCart } from 'react-icons/fi'
@@ -78,16 +80,22 @@ function TicketAddToCart({movieId, movieName, movieTags, moviePosterUrl}) {
 
         <Box p="6">
           <Box display="flex" alignItems="baseline">
-            {data.isNew && (
-                <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
-                    New
-                </Badge>
-            )}
-            {tags.map((tag, index) => (
-              <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="gray" key={index}>
-                {tag}
-              </Badge>
-            ))}
+            <Wrap justify='center'>
+                <WrapItem>
+                {data.isNew && (
+                    <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
+                        New
+                    </Badge>
+                )}
+                </WrapItem>
+                {tags.map((tag, index) => (
+                    <WrapItem key={index}>
+                      <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="gray" key={index}>
+                        {tag}
+                      </Badge>
+                    </WrapItem>
+                ))}
+            </Wrap>
           </Box>
           <Flex mt="1" justifyContent="space-between" alignContent="center">
             <Box
@@ -95,7 +103,8 @@ function TicketAddToCart({movieId, movieName, movieTags, moviePosterUrl}) {
               fontWeight="semibold"
               as="h4"
               lineHeight="tight"
-              isTruncated>
+              isTruncated
+              mr="15px">
               {movieName}
             </Box>
             <Tooltip
@@ -111,9 +120,9 @@ function TicketAddToCart({movieId, movieName, movieTags, moviePosterUrl}) {
           </Flex>
 
           <Flex justifyContent="space-between" alignContent="center">
-            <Rating rating={data.rating} numReviews={data.numReviews} />
+            <Rating rating={data.rating} numReviews={data.numReviews} mr="15px"/>
             <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
-              <Box as="span" color={'gray.600'} fontSize="lg">
+              <Box as="span" color={'gray.600'} fontSize="lg" ml="15px">
                 €
               </Box>
               {data.price.toFixed(2)}
