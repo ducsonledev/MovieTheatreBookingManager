@@ -1,10 +1,12 @@
 import SideBarWithHeader from './components/shared/SideBar.jsx'
-import { Button } from '@chakra-ui/react'
+import Ticket from './components/Ticket.jsx'
 
 function App() {
   return (
     <>
-        <SideBarWithHeader/>
+        <SideBarWithHeader>
+            <Ticket/>
+        </SideBarWithHeader>
     </>
   )
 }
