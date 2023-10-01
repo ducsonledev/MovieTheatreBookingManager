@@ -79,12 +79,12 @@ function TicketAddToCart({movieId, movieName, movieTags, moviePosterUrl}) {
         <Box p="6">
           <Box display="flex" alignItems="baseline">
             {data.isNew && (
-                <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red" key={index}>
+                <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
                     New
                 </Badge>
             )}
-            {tags.maps((tag, index) => (
-              <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red" key={index}>
+            {tags.map((tag, index) => (
+              <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="gray" key={index}>
                 {tag}
               </Badge>
             ))}
