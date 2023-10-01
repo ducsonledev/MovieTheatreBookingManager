@@ -1,12 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import SideBarWithHeader from './components/shared/SideBar.jsx'
+import { Button } from '@chakra-ui/react'
 
 function App() {
   return (
     <>
-        <p>Test</p>
+        <SideBarWithHeader/>
     </>
   )
 }
