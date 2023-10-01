@@ -24,7 +24,7 @@ public class SecurityConfiguration {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/v1/auth/**")// represents application patterns
+                .requestMatchers("/api/v1/auth/**", "/api/v1/**")// represents application patterns // for testing purpose we allow "/api/v1/**" for now, later remove it
                 .permitAll() // whitelist request matchers
                 .anyRequest() // all other requests
                 .authenticated() // should be authenticated

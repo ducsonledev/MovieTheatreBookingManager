@@ -1,13 +1,14 @@
 package com.movies.MovieTheatreBookingManager;
 
 import com.github.javafaker.Faker;
-import com.movies.MovieTheatreBookingManager.dao.UserDao;
 import com.movies.MovieTheatreBookingManager.entities.Role;
 import com.movies.MovieTheatreBookingManager.entities.User;
+import com.movies.MovieTheatreBookingManager.repositories.MovieRepository;
 import com.movies.MovieTheatreBookingManager.repositories.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
 import java.util.Random;

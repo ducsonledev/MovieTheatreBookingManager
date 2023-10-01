@@ -3,10 +3,12 @@ package com.movies.MovieTheatreBookingManager.dao;
 import com.movies.MovieTheatreBookingManager.entities.Movie;
 import com.movies.MovieTheatreBookingManager.repositories.MovieRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 @RequiredArgsConstructor
 public class MovieDaoImpl implements MovieDao {
 

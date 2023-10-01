@@ -1,7 +1,7 @@
 package com.movies.MovieTheatreBookingManager.controller;
 
-import com.movies.MovieTheatreBookingManager.dao.MovieDao;
 import com.movies.MovieTheatreBookingManager.entities.Movie;
+import com.movies.MovieTheatreBookingManager.services.MovieService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,11 +14,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MovieController {
 
-    private final MovieDao movieDao;
-
+    private final MovieService movieService;
     @GetMapping
     public List<Movie> getMovies() {
-        return movieDao.selectAllMovie();
+        return movieService.getAllMovies();
     }
 
 }
