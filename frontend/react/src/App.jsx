@@ -1,9 +1,11 @@
 import SideBarWithHeader from './components/shared/SideBar.jsx'
-import Ticket from './components/Ticket.jsx'
+import TicketAddToCart from './components/Ticket.jsx'
 import {getMovies} from "./services/client.js";
 import {useState, useEffect} from 'react';
 import { Spinner,
-         Text
+         Text,
+         Wrap,
+         WrapItem
 } from '@chakra-ui/react'
 
 function App() {
@@ -15,7 +17,7 @@ function App() {
             setLoading(true);
             setTimeout(() => {
                 getMovies().then(res => {
-                    getMovies(res.data)
+                    setMovies(res.data)
                 }).catch(err => {
                     console.log(err)
                 }).finally(() => {
@@ -37,7 +39,7 @@ function App() {
             </SideBarWithHeader>
         )
     }
-
+    console.log("movies", movies);
     if(movies.length <= 0) {
         return (
             <SideBarWithHeader>
@@ -49,7 +51,13 @@ function App() {
     return (
     <>
         <SideBarWithHeader>
-            <Ticket/>
+            <Wrap justify='center' spacing='30px'>
+                {movies.map((movie, index) => (
+                    <WrapItem key={index}>
+                        <TicketAddToCart {...movie}/>
+                    </WrapItem>
+                ))}
+            </Wrap>
         </SideBarWithHeader>
     </>
     )
