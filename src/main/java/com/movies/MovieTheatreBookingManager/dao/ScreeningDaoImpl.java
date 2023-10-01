@@ -1,23 +1,23 @@
-package com.movies.MovieTheatreBookingManager.services;
+package com.movies.MovieTheatreBookingManager.dao;
 
 import com.movies.MovieTheatreBookingManager.domain.MovieScreening;
 import com.movies.MovieTheatreBookingManager.entities.Movie;
 import com.movies.MovieTheatreBookingManager.entities.Screening;
 import com.movies.MovieTheatreBookingManager.entities.Theatre;
 import com.movies.MovieTheatreBookingManager.repositories.*;
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-@Service
-@AllArgsConstructor
-public class ScreeningServiceImpl implements ScreeningService {
-    private ScreeningRepository screeningRepository;
-    private MovieRepository movieRepository;
-    private TheatreRepository theatreRepository;
-    private TicketRepository ticketRepository;
-    private ScreenRepository screenRepository;
+@Repository
+@RequiredArgsConstructor
+public class ScreeningDaoImpl implements ScreeningDao {
+    private final ScreeningRepository screeningRepository;
+    private final MovieRepository movieRepository;
+    private final TheatreRepository theatreRepository;
+    private final TicketRepository ticketRepository;
+    private final ScreenRepository screenRepository;
 
     private Screening getScreening(MovieScreening movieScreening) {
         Theatre theatre = theatreRepository.findByTheatreNameAndTheatreCity(

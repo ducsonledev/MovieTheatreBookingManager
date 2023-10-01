@@ -2,7 +2,7 @@ package com.movies.MovieTheatreBookingManager.controller;
 
 import com.movies.MovieTheatreBookingManager.domain.MovieScreening;
 import com.movies.MovieTheatreBookingManager.repositories.MovieRepository;
-import com.movies.MovieTheatreBookingManager.services.ScreeningServiceImpl;
+import com.movies.MovieTheatreBookingManager.dao.ScreeningDaoImpl;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +22,7 @@ public class ScreeningController {
     @Autowired
     private MovieRepository movieRepository;
     @Autowired
-    private ScreeningServiceImpl screeningService;
+    private ScreeningDaoImpl screeningService;
 
     @GetMapping("/{movie}")
     public String getScreenings(@RequestParam String movie, Model model) {
