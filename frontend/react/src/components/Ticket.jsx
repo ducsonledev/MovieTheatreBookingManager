@@ -64,7 +64,7 @@ function Rating({ rating, numReviews }) { // : RatingProps
 function TicketAddToCart({movieId, movieName, movieTags, moviePosterUrl}) {
   const tags = movieTags.split('|');
   return (
-    <Flex p={50} w="full" alignItems="center" justifyContent="center">
+    <Flex p={5} w="full" alignItems="center" justifyContent="center">
       <Box
         bg={useColorModeValue('white', 'gray.800')}
         maxW="sm"
