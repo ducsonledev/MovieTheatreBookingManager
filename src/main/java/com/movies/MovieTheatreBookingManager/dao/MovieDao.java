@@ -9,7 +9,7 @@ public interface MovieDao {
 
 
     List<Movie> selectAllMovie();
-    Optional<Movie> selectCustomerById(Integer Id);
+    Optional<Movie> selectMovieById(Integer Id);
     void insertMovie(Movie movie);
     void removeMovieById(Integer id);
     boolean existsMovieWithName(String movieName);
