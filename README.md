@@ -13,7 +13,7 @@ MovieTheatreBookingManager serves as a tool for properly managing reservations f
 
 We present the repository structure as well as the functionality of the different major components in the following.
 
-![screenshot_ui_movie_app2023-10-04 130105](https://github.com/ducsonledev/MovieTheatreBookingManager/assets/72577766/b702d3e6-00eb-496e-9392-fa0cd24aa567)
+![grafik](https://github.com/ducsonledev/MovieTheatreBookingManager/assets/72577766/0f1334e7-b4bb-45a5-b599-9196015eb817)
 
 ### File Overview
 
