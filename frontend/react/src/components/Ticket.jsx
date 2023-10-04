@@ -75,9 +75,9 @@ function TicketAddToCart({movieId, movieName, movieTags, moviePosterUrl}) {
         {data.isNew && (
           <Circle size="10px" position="absolute" top={2} right={2} bg="red.200" />
         )}
-
-        <Image src={moviePosterUrl} alt={`Picture of ${movieName}`} roundedTop="lg" />
-
+        <Flex justifyContent="center">
+            <Image src={moviePosterUrl} alt={`Picture of ${movieName}`} roundedTop="lg" />
+        </Flex>
         <Box p="6">
           <Box display="flex" alignItems="baseline">
             <Wrap justify='center'>
