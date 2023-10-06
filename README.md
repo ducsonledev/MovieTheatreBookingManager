@@ -4,6 +4,8 @@
 
 MovieTheatreBookingManager serves as a tool for properly managing reservations for a theater to control the movies presented in screenings that are provided for the consumers and to purchase tickets that reserve seats in a screening.
 
+![grafik](https://github.com/ducsonledev/MovieTheatreBookingManager/assets/72577766/0f1334e7-b4bb-45a5-b599-9196015eb817)
+
 ### Work in Progress
 - [ ] integration tests
 - [ ] frontend with typescript
@@ -12,8 +14,6 @@ MovieTheatreBookingManager serves as a tool for properly managing reservations f
 ### Repository Structure
 
 We present the repository structure as well as the functionality of the different major components in the following.
-
-![grafik](https://github.com/ducsonledev/MovieTheatreBookingManager/assets/72577766/0f1334e7-b4bb-45a5-b599-9196015eb817)
 
 ### File Overview
 
